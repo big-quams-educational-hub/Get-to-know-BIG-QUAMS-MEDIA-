@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Big Quams Media — Abdulrasaq Quwamdeen</title>
+  <meta name="description" content="Portfolio of Abdulrasaq Quwamdeen — Founder & CEO of Big Quams Media Hub. Digital strategist, media innovator, and creative builder." />
+
+  <!-- Fonts + Icons (single file otherwise) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+
+  <style>
+    :root{
+      /* Modern professional palette */
+      --bg: #0b1020;              /* deep blue-black */
+      --bg-soft: #0f1730;         /* section contrast */
+      --card: #121a39;            /* card base */
+      --muted: #9fb0d7;           /* muted text */
+      --text: #e8eeff;            /* main text */
+      --primary: #5b8cff;         /* royal blue */
+      --primary-2: #8b5cf6;       /* soft purple */
+      --accent: #22d3ee;          /* cyan accent */
+      --ring: rgba(91,140,255,.35);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --gap: 22px;
+      --maxw: 1200px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(91,140,255,.25), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(139,92,246,.22), transparent 60%),
+        radial-gradient(700px 400px at 50% 120%, rgba(34,211,238,.12), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* --- Layout helpers --- */
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+    section{padding:80px 0}
+    h1,h2,h3{line-height:1.2;margin:0 0 12px}
+    .eyebrow{letter-spacing:.2em; text-transform:uppercase; font-weight:700; color:var(--muted); font-size:.8rem}
+
+    /* --- Navbar --- */
+    .nav{
+      position:sticky; top:0; z-index:50; backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(11,16,32,.85), rgba(11,16,32,.65));
+      border-bottom: 1px solid rgba(143,164,222,.12);
+    }
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; height:68px}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.02em}
+    .brand i{color:var(--accent)}
+    .brand span{background: linear-gradient(90deg, var(--primary), var(--primary-2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .nav-links{display:flex; gap:18px}
+    .nav-links a{
+      color:var(--muted); text-decoration:none; font-weight:600; font-size:.98rem; padding:8px 12px; border-radius:10px;
+    }
+    .nav-links a.active, .nav-links a:hover{color:var(--text); background: rgba(143,164,222,.12)}
+    .nav-cta a{
+      display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--bg);
+      background: linear-gradient(90deg, var(--primary), var(--primary-2));
+      padding:10px 14px; border-radius:12px; font-weight:700; box-shadow: var(--shadow);
+    }
+    .burger{display:none; font-size:1.3rem; color:var(--text)}
+    @media (max-width: 900px){
+      .nav-links{display:none}
+      .burger{display:block}
+      .mobile{display:none; position:absolute; left:0; right:0; top:68px; background:rgba(11,16,32,.98); border-bottom:1px solid rgba(143,164,222,.12)}
+      .mobile a{display:block; padding:14px 20px; color:var(--muted); text-decoration:none; border-top:1px solid rgba(143,164,222,.08)}
+      .mobile a:hover{background:rgba(143,164,222,.08); color:var(--text)}
+      .nav-cta{display:none}
+    }
+
+    /* --- Hero --- */
+    .hero{
+      padding:96px 0 72px;
+      background:
+        radial-gradient(800px 400px at 10% 10%, rgba(91,140,255,.14), transparent 60%),
+        radial-gradient(800px 400px at 90% 20%, rgba(139,92,246,.16), transparent 60%);
+    }
+    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:40px; align-items:center}
+    .hero h1{font-size: clamp(2rem, 5vw, 3.2rem); font-weight:800}
+    .hero p{color:var(--muted); font-size:1.05rem; margin:10px 0 22px}
+    .cta-row{display:flex; gap:14px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-weight:700;
+      padding:12px 16px; border-radius:12px; border:1px solid transparent;
+      transition: transform .15s ease, background .2s ease;
+    }
+    .btn-primary{background: linear-gradient(90deg, var(--primary), var(--primary-2)); color:#0b0f1e}
+    .btn-primary i{color:#0b0f1e}
+    .btn-ghost{border-color: rgba(143,164,222,.25); color:var(--text); background: rgba(18,26,57,.6)}
+    .btn:hover{transform: translateY(-2px)}
+    .hero-card{
+      background: linear-gradient(180deg, rgba(18,26,57,.9), rgba(18,26,57,.6));
+      border:1px solid rgba(143,164,222,.18); border-radius: var(--radius);
+      padding:20px; box-shadow: var(--shadow)
+    }
+    .idlines{display:grid; gap:10px; font-size:.95rem}
+    .idlines b{color:var(--text)}
+
+    @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr} }
+
+    /* --- Section shells --- */
+    .section-head{display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:28px}
+    .section-head h2{font-size: clamp(1.4rem, 4vw, 2rem)}
+
+    /* --- Cards + grids --- */
+    .grid{display:grid; gap:var(--gap)}
+    .grid-3{grid-template-columns: repeat(3, 1fr)}
+    .grid-2{grid-template-columns: repeat(2, 1fr)}
+    .grid-4{grid-template-columns: repeat(4, 1fr)}
+    @media (max-width:1000px){ .grid-4{grid-template-columns: repeat(2, 1fr)} }
+    @media (max-width:720px){ .grid-3,.grid-2,.grid-4{grid-template-columns:1fr} }
+
+    .card{
+      background: linear-gradient(180deg, rgba(18,26,57,.85), rgba(18,26,57,.6));
+      border:1px solid rgba(143,164,222,.2);
+      border-radius: var(--radius); padding:22px;
+      box-shadow: var(--shadow); transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card:hover{transform: translateY(-6px)}
+    .card h4{margin:6px 0 6px}
+    .icon{
+      width:44px; height:44px; display:inline-grid; place-items:center; border-radius:12px;
+      background: linear-gradient(145deg, rgba(91,140,255,.16), rgba(139,92,246,.16));
+      border:1px solid rgba(143,164,222,.2); color:var(--accent)
+    }
+    .muted{color:var(--muted)}
+    .tag{
+      display:inline-block; padding:6px 10px; border-radius:999px; font-size:.78rem; font-weight:700;
+      color:#0b0f1e; background: linear-gradient(90deg, var(--accent), #6ee7f9)
+    }
+
+    /* --- Project images --- */
+    .project img{
+      width:100%; height:180px; object-fit:cover; border-radius:12px; margin:6px 0 10px;
+      border:1px solid rgba(143,164,222,.18)
+    }
+    .project .actions{display:flex; gap:10px; flex-wrap:wrap}
+    .btn-small{padding:9px 12px; border-radius:10px; font-weight:700; font-size:.92rem}
+    .btn-outline{border:1px solid rgba(143,164,222,.28); color:var(--text); background:transparent}
+    .btn-outline:hover{background: rgba(143,164,222,.12)}
+
+    /* --- Campus Plug CTA --- */
+    .cta-banner{
+      background: linear-gradient(90deg, rgba(34,211,238,.18), rgba(91,140,255,.18));
+      border:1px dashed rgba(143,164,222,.35); border-radius: var(--radius); padding:22px;
+      display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap
+    }
+
+    /* --- Contact --- */
+    .contact-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:var(--gap)}
+    @media (max-width: 900px){ .contact-grid{grid-template-columns:1fr} }
+    .socials{display:flex; flex-wrap:wrap; gap:10px}
+    .socials a{
+      display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--text);
+      padding:10px 14px; border-radius:12px; border:1px solid rgba(143,164,222,.25);
+      background: rgba(18,26,57,.55)
+    }
+    .socials a:hover{background: rgba(143,164,222,.12)}
+    .socials i{color:var(--accent)}
+
+    /* --- Footer --- */
+    footer{border-top:1px solid rgba(143,164,222,.12); padding:26px 0; color:var(--muted); text-align:center}
+
+    /* --- Scroll animations --- */
+    .reveal{opacity:0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease}
+    .reveal.show{opacity:1; transform:none}
+    /* active nav link */
+    .active{color:var(--text)!important}
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <i class="fa-solid fa-bolt"></i>
+        <span>BIG QUAMS MEDIA</span>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#campus">Campus Plug TV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="https://bigquamsmedia-one.vercel.app/ABDULRASAQ%20QUWAMDEEN%20(Resume).pdf" target="_blank" rel="noopener">
+          <i class="fa-solid fa-file-lines"></i> CV
+        </a>
+      </div>
+
+      <button class="burger" id="burger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile container" id="mobileMenu" aria-hidden="true">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#campus">Campus Plug TV</a>
+      <a href="#contact">Contact</a>
+      <a href="https://bigquamsmedia-one.vercel.app/ABDULRASAQ%20QUWAMDEEN%20(Resume).pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Founder • CEO • Digital Strategist</span>
+        <h1>Abdulrasaq Quwamdeen</h1>
+        <p>Building <b>Big Quams Media Hub</b> — a creative, student-focused media brand delivering real-time information, storytelling, and digital growth for audiences and brands.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://bigquamsmedia-one.vercel.app/ABDULRASAQ%20QUWAMDEEN%20(Resume).pdf" target="_blank" rel="noopener">
+            <i class="fa-solid fa-file-arrow-down"></i> Download CV
+          </a>
+          <a class="btn btn-ghost" href="mailto:bigquamsmedia024@gmail.com">
+            <i class="fa-solid fa-envelope"></i> Email Me
+          </a>
+          <a class="btn btn-ghost" href="tel:+2349049871643">
+            <i class="fa-solid fa-phone"></i> Call
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-card reveal" aria-label="Contact snapshot">
+        <div class="idlines">
+          <div><b>Company:</b> Big Quams Media Hub</div>
+          <div><b>Role:</b> Founder & CEO</div>
+          <div><b>Location:</b> Lagos, Nigeria</div>
+          <div><b>Email:</b> <a href="mailto:bigquamsmedia024@gmail.com" style="color:var(--accent); text-decoration:none">bigquamsmedia024@gmail.com</a></div>
+          <div><b>Phone:</b> <a href="tel:+2349049871643" style="color:var(--accent); text-decoration:none">+234 904 987 1643</a></div>
+          <div class="socials" style="margin-top:6px">
+            <a href="https://www.facebook.com/bigquamsmedia024" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://wa.me/+2349049871643" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://t.me/bigquams" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+            <a href="https://x.com/BigQuams024?t=UxxbNpyWmyw5brSp_nNyoQ&s=09" target="_blank"><i class="fab fa-x-twitter"></i> X</a>
+            <a href="https://www.instagram.com/bigquams024/profilecard/?igsh=OGxsM2dqeDY2YzVj" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.linkedin.com/in/abdulrasaq-quwamdeen-436a18360" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">About</span>
+          <h2>Who I Am & What I Build</h2>
+        </div>
+        <span class="tag">Big Quams Media</span>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card reveal">
+          <div class="icon"><i class="fa-solid fa-user-tie"></i></div>
+          <h4>Founder • Media Entrepreneur</h4>
+          <p class="muted">I create digital experiences for students and brands — combining content, technology, and community to drive measurable growth.</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h4>Mission & Impact</h4>
+          <p class="muted">From campus updates to creative campaigns, my work focuses on clarity, access, and opportunity — empowering youth across Nigeria and beyond.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (remote-job oriented) -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Services</span>
+          <h2>What I Do (Remote-Ready)</h2>
+        </div>
+        <span class="tag">Available for hire</span>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="card reveal">
+          <div class="icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <h4>Content Creation</h4>
+          <p class="muted">Copy, visuals, and campaigns that inform, engage, and convert — tailored for your audience and platform.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h4>Web Design</h4>
+          <p class="muted">Modern, responsive websites that communicate brand value clearly and load fast across devices.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><i class="fa-solid fa-share-nodes"></i></div>
+          <h4>Social Media Management</h4>
+          <p class="muted">Strategy + execution: content calendars, growth tactics, analytics, and community engagement.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h4>Brand & Campaign Strategy</h4>
+          <p class="muted">Positioning, messaging, and paid/organic campaign planning that drives measurable outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Skills</span>
+          <h2>Core Capabilities</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-video"></i></div><h4>Media Production</h4><p class="muted">Editing, short-form content, reels, and story-led visuals.</p></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-newspaper"></i></div><h4>Digital Journalism</h4><p class="muted">Campus news, opportunities, and community reporting.</p></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-chart-line"></i></div><h4>Insights & Analytics</h4><p class="muted">Tracking performance and iterating for growth.</p></div>
+        <div class="card reveal"><div class="icon"><i class="fa-solid fa-people-group"></i></div><h4>Community Building</h4><p class="muted">Moderation, engagement, and partnerships.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Projects</span>
+          <h2>Selected Work</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="card project reveal" aria-label="Campus Plug TV">
+          <div class="icon"><i class="fa-solid fa-tv"></i></div>
+          <h4>Campus Plug TV</h4>
+          <img src="https://picsum.photos/600/360?random=11" alt="Campus Plug TV cover image"/>
+          <p class="muted">Real-time academic updates & gist platform serving thousands of students nationwide.</p>
+          <div class="actions">
+            <a class="btn-small btn-outline" href="https://wa.me/message/OVCVEDHU3I2PH1" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Join on WhatsApp</a>
+          </div>
+        </article>
+
+        <article class="card project reveal" aria-label="Big Quams Media Hub">
+          <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+          <h4>Big Quams Media Hub</h4>
+          <img src="https://picsum.photos/600/360?random=12" alt="Big Quams Media Hub cover image"/>
+          <p class="muted">A growing digital ecosystem delivering media, news, and digital services for students and brands.</p>
+        </article>
+
+        <article class="card project reveal" aria-label="Creative Campaigns">
+          <div class="icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <h4>Creative Campaigns</h4>
+          <img src="https://picsum.photos/600/360?random=13" alt="Creative campaigns cover image"/>
+          <p class="muted">Brand collaborations and awareness campaigns reaching diverse audiences.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPUS PLUG TV CTA -->
+  <section id="campus">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <div>
+          <span class="eyebrow">Community</span>
+          <h2 style="margin:6px 0 0">Join <b>Campus Plug TV</b></h2>
+          <p class="muted" style="margin:6px 0 0">Stay updated with admissions, scholarships, campus news, and student opportunities.</p>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/message/OVCVEDHU3I2PH1" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Join on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>Let’s Work Together</h2>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card reveal">
+          <h4>Reach Me</h4>
+          <p class="muted">I’m available for remote roles, collaborations, and consulting.</p>
+          <div class="idlines" style="margin-top:10px">
+            <div><i class="fa-solid fa-envelope" style="color:var(--accent)"></i> <a href="mailto:bigquamsmedia024@gmail.com" style="color:var(--text); text-decoration:none">bigquamsmedia024@gmail.com</a></div>
+            <div><i class="fa-solid fa-phone" style="color:var(--accent)"></i> <a href="tel:+2349049871643" style="color:var(--text); text-decoration:none">+234 904 987 1643</a></div>
+            <div><i class="fa-solid fa-file-arrow-down" style="color:var(--accent)"></i> <a href="https://bigquamsmedia-one.vercel.app/ABDULRASAQ%20QUWAMDEEN%20(Resume).pdf" target="_blank" rel="noopener" style="color:var(--text); text-decoration:none">Download CV</a></div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <h4>Social Links</h4>
+          <div class="socials" style="margin-top:10px">
+            <a href="https://www.facebook.com/bigquamsmedia024" target="_blank" rel="noopener"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://wa
