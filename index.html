@@ -17,49 +17,51 @@
     * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; scroll-behavior:smooth;}
     body {background: var(--bg); color: var(--text);}
     a {text-decoration:none;}
-    
+
     /* Navbar */
     nav {
-      background: var(--primary); color:white;
-      display:flex; justify-content:space-between; align-items:center;
-      padding:1rem 2rem; position:sticky; top:0; z-index:100;
+      background: var(--primary);
+      color:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0.8rem 2rem;
+      position:sticky;
+      top:0;
+      z-index:100;
       box-shadow:0 4px 12px rgba(0,0,0,0.1);
     }
-    nav .logo img {height:50px; border-radius:50%;}
-    nav ul {
-      display:flex; gap:2rem; list-style:none;
-    }
-    nav ul li a {color:white; font-weight:500; position:relative; transition:0.3s;}
-    nav ul li a::after {content:""; position:absolute; left:0; bottom:-3px; width:0%; height:2px; background:var(--secondary); transition:0.3s;}
-    nav ul li a:hover::after{width:100%;}
+    .nav-left, .nav-center, .nav-right {display:flex; align-items:center; gap:1rem;}
+    .nav-left img {height:50px; border-radius:50%;}
+    .nav-center {flex:1; justify-content:center; font-size:1.5rem; font-weight:700; letter-spacing:1px;}
+    .nav-right ul {display:flex; gap:1.5rem; list-style:none;}
+    .nav-right ul li a {color:white; font-weight:500; position:relative; transition:0.3s;}
+    .nav-right ul li a::after {content:""; position:absolute; left:0; bottom:-3px; width:0%; height:2px; background:var(--secondary); transition:0.3s;}
+    .nav-right ul li a:hover::after{width:100%;}
 
     /* Hamburger */
-    .hamburger {
-      display:none; flex-direction:column; cursor:pointer; gap:5px;
-    }
-    .hamburger span {
-      display:block; height:3px; width:25px; background:white; border-radius:2px; transition:0.3s;
-    }
+    .hamburger {display:none; flex-direction:column; cursor:pointer; gap:5px;}
+    .hamburger span {display:block; height:3px; width:25px; background:white; border-radius:2px; transition:0.3s;}
 
     /* Hero */
-    .hero {text-align:center; padding:8rem 2rem; background: linear-gradient(135deg,var(--primary),var(--secondary)); color:white;}
-    .hero img {width:140px; border-radius:50%; border:4px solid white; margin-bottom:1rem; box-shadow:0 8px 20px rgba(0,0,0,0.3);}
-    .hero h1{font-size:3rem;margin-bottom:0.5rem;}
-    .hero p{font-size:1.2rem;margin-bottom:1.5rem;}
+    .hero {text-align:center; padding:6rem 2rem 4rem; background: linear-gradient(135deg,var(--primary),var(--secondary)); color:white;}
+    .hero img {width:120px; max-width:40%; border-radius:50%; border:4px solid white; margin-bottom:1rem; box-shadow:0 8px 20px rgba(0,0,0,0.3);}
+    .hero h1{font-size:2.5rem;margin-bottom:0.5rem;}
+    .hero p{font-size:1.1rem;margin-bottom:1.5rem;}
     .hero .btn{padding:0.7rem 1.5rem;border-radius:50px;font-weight:600;margin:0.3rem;color:var(--primary); background:white;transition:0.3s;}
     .hero .btn:hover{background:var(--secondary); color:white; transform:translateY(-2px);}
 
     /* Sections */
-    section{padding:6rem 2rem; max-width:1200px; margin:auto;}
-    h2{text-align:center; font-size:2.5rem; margin-bottom:2rem; color:var(--primary); position:relative;}
+    section{padding:5rem 1.5rem; max-width:1200px; margin:auto;}
+    h2{text-align:center; font-size:2.2rem; margin-bottom:2rem; color:var(--primary); position:relative;}
     h2::after{content:""; width:60px;height:3px;background:var(--secondary); display:block;margin:0.5rem auto 0;}
     p {line-height:1.7; color: #374151;}
 
     /* Grid Cards */
-    .grid-3, .grid-2{display:grid; gap:2rem;}
-    .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
-    .grid-2{grid-template-columns:repeat(auto-fit,minmax(350px,1fr));}
-    .card{background:white;padding:2rem;border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:0.3s;text-align:left;}
+    .grid-3, .grid-2{display:grid; gap:1.8rem;}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+    .grid-2{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+    .card{background:white;padding:1.8rem;border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,0.06);transition:0.3s;text-align:left;}
     .card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.12);}
     .card i{font-size:2rem;color:var(--primary); margin-bottom:1rem;}
 
@@ -67,7 +69,7 @@
     .tools img{max-width:100%;border-radius:var(--radius);box-shadow:0 10px 20px rgba(0,0,0,0.2);}
 
     /* Contact */
-    .contact-grid{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); max-width:900px; margin:auto;}
+    .contact-grid{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); max-width:900px; margin:auto;}
     .contact-grid a{display:flex; align-items:center; gap:0.5rem; padding:0.6rem 1rem; border-radius:var(--radius); background:white; color:var(--primary); font-weight:500; box-shadow:0 4px 12px rgba(0,0,0,0.05); transition:0.3s;}
     .contact-grid a:hover{background:var(--secondary); color:white; transform:translateY(-2px);}
 
@@ -76,9 +78,13 @@
 
     /* Responsive Navbar */
     @media (max-width:768px){
-      nav ul {display:none; flex-direction:column; gap:1rem; background:var(--primary); position:absolute; top:70px; right:0; width:200px; padding:1rem; border-radius:0 0 0 12px;}
-      nav ul.active {display:flex;}
+      .nav-right ul {display:none; flex-direction:column; gap:1rem; background:var(--primary); position:absolute; top:65px; right:0; width:200px; padding:1rem; border-radius:0 0 0 12px;}
+      .nav-right ul.active {display:flex;}
       .hamburger {display:flex;}
+      .hero {padding:5rem 1rem 3rem;}
+      .hero h1{font-size:2rem;}
+      .hero p{font-size:1rem;}
+      .hero img{width:100px; max-width:35%;}
     }
   </style>
 </head>
@@ -86,20 +92,23 @@
 
   <!-- Navbar -->
   <nav>
-    <div class="logo">
+    <div class="nav-left">
       <img src="https://ik.imagekit.io/bigquamsmedia/Logopit_1745061158082.jpg" alt="Logo">
     </div>
-    <ul id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="nav-center">BIG QUAMS MEDIA</div>
+    <div class="nav-right">
+      <ul id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
 
@@ -123,22 +132,22 @@
   <!-- Skills -->
   <section id="skills">
     <h2>Skills</h2>
-    <p class="text-center italic mb-10">Bringing Ideas to Life Through Design, Strategy, and Purpose-Driven Impact</p>
+    <p style="text-align:center;font-style:italic;margin-bottom:2rem;">Bringing Ideas to Life Through Design, Strategy, and Purpose-Driven Impact</p>
     <div class="grid-2">
-      <div class="card"><i class="fas fa-paint-brush"></i> <strong>Graphic Design</strong> — From social media flyers to stunning brand visuals, I create designs that get you noticed.</div>
-      <div class="card"><i class="fas fa-pen-nib"></i> <strong>Content Creation</strong> — I craft words that connect, inform, and inspire.</div>
-      <div class="card"><i class="fas fa-bullhorn"></i> <strong>Brand Promotion</strong> — I help you build a unique identity online and offline.</div>
-      <div class="card"><i class="fas fa-chart-line"></i> <strong>Digital Marketing</strong> — Strategy, planning, and execution to grow your audience and make real impact.</div>
-      <div class="card"><i class="fas fa-users"></i> <strong>Student Advocacy & Motivation</strong> — Through my writing, I inspire young people to find their voice and own their journey.</div>
-      <div class="card"><i class="fas fa-book-open"></i> <strong>Educational Consultant & Online Tutor</strong> — Guiding students to succeed academically and beyond.</div>
+      <div class="card"><i class="fas fa-paint-brush"></i><strong>Graphic Design</strong> — From social media flyers to stunning brand visuals, I create designs that get you noticed.</div>
+      <div class="card"><i class="fas fa-pen-nib"></i><strong>Content Creation</strong> — I craft words that connect, inform, and inspire.</div>
+      <div class="card"><i class="fas fa-bullhorn"></i><strong>Brand Promotion</strong> — I help you build a unique identity online and offline.</div>
+      <div class="card"><i class="fas fa-chart-line"></i><strong>Digital Marketing</strong> — Strategy, planning, and execution to grow your audience and make real impact.</div>
+      <div class="card"><i class="fas fa-users"></i><strong>Student Advocacy & Motivation</strong> — Through my writing, I inspire young people to find their voice and own their journey.</div>
+      <div class="card"><i class="fas fa-book-open"></i><strong>Educational Consultant & Online Tutor</strong> — Guiding students to succeed academically and beyond.</div>
     </div>
   </section>
 
   <!-- Tools -->
   <section id="tools">
     <h2>Tools</h2>
-    <p class="text-center mb-8">The professional tools I use to create, design, and deliver impactful digital experiences.</p>
-    <div class="tools">
+    <p style="text-align:center;margin-bottom:2rem;">The professional tools I use to create, design, and deliver impactful digital experiences.</p>
+    <div class="tools" style="text-align:center;">
       <img src="https://bigquamsmedia-one.vercel.app/tools.jpg" alt="Tools I use">
     </div>
   </section>
@@ -160,9 +169,9 @@
       <a href="tel:+2349049871643"><i class="fas fa-phone"></i> +234 904 987 1643</a>
       <a href="mailto:bigquamsmedia024@gmail.com"><i class="fas fa-envelope"></i> bigquamsmedia024@gmail.com</a>
       <a href="https://wa.me/+2349049871643"><i class="fab fa-whatsapp"></i> BIG QUAMS MEDIA HUB (WhatsApp)</a>
-      <a href="https://wa.me/message/OVCVEDHU3I2PH1"><i class="fas fa-tv"></i> BIG QUAMS MEDIA HUB TV</a>
+      <a href="https://wa.me/message/OVCVEDHU3I2PH1"><i class="fas fa-tv"></i> BIG QUAMS MEDIA HUB (Campus Plug TV)</a>
       <a href="https://www.facebook.com/bigquamsmedia024"><i class="fab fa-facebook"></i> BIGQUAMS024</a>
-      <a href="https://x.com/BigQuams024?t=UxxbNpyWmyw5brSp_nNyoQ&s=09"><i class="fab fa-x-twitter"></i> BUGQUAMS024</a>
+      <a href="https://x.com/BigQuams024?t=UxxbNpyWmyw5brSp_nNyoQ&s=09"><i class="fab fa-x-twitter"></i> X</a>
       <a href="https://www.instagram.com/bigquams024/profilecard/?igsh=OGxsM2dqeDY2YzVj"><i class="fab fa-instagram"></i> BIGQUAMS024</a>
       <a href="https://t.me/bigquams"><i class="fab fa-telegram"></i> Telegram</a>
       <a href="https://www.linkedin.com/in/abdulrasaq-quwamdeen-436a18360"><i class="fab fa-linkedin"></i> BIGQUAMS024</a>
@@ -177,9 +186,36 @@
   <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
+    // Back to top button
+    const topBtn = document.createElement("button");
+    topBtn.id = "topBtn";
+    topBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    topBtn.style.position = "fixed";
+    topBtn.style.bottom = "25px";
+    topBtn.style.right = "25px";
+    topBtn.style.padding = "0.8rem";
+    topBtn.style.border = "none";
+    topBtn.style.borderRadius = "50%";
+    topBtn.style.background = "var(--secondary)";
+    topBtn.style.color = "white";
+    topBtn.style.fontSize = "1.2rem";
+    topBtn.style.cursor = "pointer";
+    topBtn.style.display = "none";
+    topBtn.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
+    document.body.appendChild(topBtn);
+
+    window.onscroll = function() {
+      if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    };
+
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({top:0, behavior:'smooth'});
     });
   </script>
 </body>
