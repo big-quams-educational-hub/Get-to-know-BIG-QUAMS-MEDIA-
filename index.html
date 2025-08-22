@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,27 +7,39 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --primary: #1b90be;   /* Logo Blue */
-      --secondary: #ff7043; /* Logo Accent */
-      --bg: #f9f9f9;
+      --primary: #1A3C8D;   /* Royal Blue */
+      --secondary: #F58220; /* Orange */
+      --bg: #FFFFFF;
       --text: #1f2937;
       --radius: 12px;
     }
 
-    * {margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;scroll-behavior:smooth;}
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; scroll-behavior:smooth;}
     body {background: var(--bg); color: var(--text);}
     a {text-decoration:none;}
     
     /* Navbar */
     nav {
-      background: var(--primary); color:white; display:flex; justify-content:space-between; align-items:center; 
-      padding:1rem 2rem; position:sticky; top:0; z-index:100; box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      background: var(--primary); color:white;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 2rem; position:sticky; top:0; z-index:100;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
     }
     nav .logo img {height:50px; border-radius:50%;}
-    nav ul {display:flex; gap:2rem; list-style:none;}
-    nav ul li a {color:white; font-weight:500; position:relative;}
+    nav ul {
+      display:flex; gap:2rem; list-style:none;
+    }
+    nav ul li a {color:white; font-weight:500; position:relative; transition:0.3s;}
     nav ul li a::after {content:""; position:absolute; left:0; bottom:-3px; width:0%; height:2px; background:var(--secondary); transition:0.3s;}
     nav ul li a:hover::after{width:100%;}
+
+    /* Hamburger */
+    .hamburger {
+      display:none; flex-direction:column; cursor:pointer; gap:5px;
+    }
+    .hamburger span {
+      display:block; height:3px; width:25px; background:white; border-radius:2px; transition:0.3s;
+    }
 
     /* Hero */
     .hero {text-align:center; padding:8rem 2rem; background: linear-gradient(135deg,var(--primary),var(--secondary)); color:white;}
@@ -61,6 +73,13 @@
 
     /* Footer */
     footer{background:var(--primary); color:white; text-align:center; padding:2rem 1rem;}
+
+    /* Responsive Navbar */
+    @media (max-width:768px){
+      nav ul {display:none; flex-direction:column; gap:1rem; background:var(--primary); position:absolute; top:70px; right:0; width:200px; padding:1rem; border-radius:0 0 0 12px;}
+      nav ul.active {display:flex;}
+      .hamburger {display:flex;}
+    }
   </style>
 </head>
 <body>
@@ -70,13 +89,18 @@
     <div class="logo">
       <img src="https://ik.imagekit.io/bigquamsmedia/Logopit_1745061158082.jpg" alt="Logo">
     </div>
-    <ul>
+    <ul id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#tools">Tools</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </nav>
 
   <!-- Hero -->
@@ -114,7 +138,7 @@
   <section id="tools">
     <h2>Tools</h2>
     <p class="text-center mb-8">The professional tools I use to create, design, and deliver impactful digital experiences.</p>
-    <div class="tools flex justify-center">
+    <div class="tools">
       <img src="https://bigquamsmedia-one.vercel.app/tools.jpg" alt="Tools I use">
     </div>
   </section>
@@ -136,9 +160,9 @@
       <a href="tel:+2349049871643"><i class="fas fa-phone"></i> +234 904 987 1643</a>
       <a href="mailto:bigquamsmedia024@gmail.com"><i class="fas fa-envelope"></i> bigquamsmedia024@gmail.com</a>
       <a href="https://wa.me/+2349049871643"><i class="fab fa-whatsapp"></i> BIG QUAMS MEDIA HUB (WhatsApp)</a>
-      <a href="https://wa.me/message/OVCVEDHU3I2PH1"><i class="fas fa-tv"></i> BIG QUAMS MEDIA HUB</a>
+      <a href="https://wa.me/message/OVCVEDHU3I2PH1"><i class="fas fa-tv"></i> BIG QUAMS MEDIA HUB TV</a>
       <a href="https://www.facebook.com/bigquamsmedia024"><i class="fab fa-facebook"></i> BIGQUAMS024</a>
-      <a href="https://x.com/BigQuams024?t=UxxbNpyWmyw5brSp_nNyoQ&s=09"><i class="fab fa-x-twitter"></i> X</a>
+      <a href="https://x.com/BigQuams024?t=UxxbNpyWmyw5brSp_nNyoQ&s=09"><i class="fab fa-x-twitter"></i> BUGQUAMS024</a>
       <a href="https://www.instagram.com/bigquams024/profilecard/?igsh=OGxsM2dqeDY2YzVj"><i class="fab fa-instagram"></i> BIGQUAMS024</a>
       <a href="https://t.me/bigquams"><i class="fab fa-telegram"></i> Telegram</a>
       <a href="https://www.linkedin.com/in/abdulrasaq-quwamdeen-436a18360"><i class="fab fa-linkedin"></i> BIGQUAMS024</a>
@@ -150,18 +174,13 @@
     &copy; 2025 Big Quams Media Hub. All rights reserved.
   </footer>
 
-</body>
-</html></a>
-      <a href="https://www.instagram.com/bigquams024/profilecard/?igsh=OGxsM2dqeDY2YzVj"><i class="fab fa-instagram"></i> BIGQUAMS024</a>
-      <a href="https://t.me/bigquams"><i class="fab fa-telegram"></i> Telegram</a>
-      <a href="https://www.linkedin.com/in/abdulrasaq-quwamdeen-436a18360"><i class="fab fa-linkedin"></i> BIGQUAMS024</a>
-    </div>
-  </section>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Big Quams Media Hub. All rights reserved.
-  </footer>
-
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
