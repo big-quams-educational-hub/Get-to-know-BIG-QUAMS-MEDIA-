@@ -109,7 +109,7 @@
         #hero .profile-pic {
             width: 180px;
             height: 180px;
-            border-radius: 50%;
+            /* border-radius: 50%; Uncomment this line if you want it circular */
             border: 5px solid var(--white);
             object-fit: cover;
             margin-bottom: 20px;
@@ -601,4 +601,33 @@
                     </div>
                 </div>
 
-                <div class="co
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form action="#" method="POST">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject">
+
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Abdulrasaq Quwamdeen O. All rights reserved.</p>
+            <p>Powered by Big Quams Media</p>
+        </div>
+    </footer>
+</body>
+</html>
