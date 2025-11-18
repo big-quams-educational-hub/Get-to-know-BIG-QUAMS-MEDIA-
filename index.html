@@ -69,6 +69,9 @@
             font-size: 1.8em;
             font-weight: 700;
             color: var(--white);
+            /* Allow logo text to wrap on smaller screens if too long */
+            white-space: normal;
+            text-align: center; /* Center logo text if it wraps */
         }
 
         nav ul {
@@ -420,6 +423,7 @@
                 margin: 0 10px 10px 10px;
             }
 
+            /* Adjust hero section for smaller screens */
             #hero .hero-content {
                 flex-direction: column; /* Stack image and text vertically */
                 text-align: center;
@@ -453,7 +457,7 @@
 
         @media (max-width: 480px) {
             .logo {
-                font-size: 1.5em;
+                font-size: 1.2em; /* Slightly smaller logo text for very small screens */
             }
 
             nav ul li {
@@ -483,7 +487,7 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo">Abdulrasaq Q.</div>
+            <div class="logo">Abdulrasaq Quwamdeen O.</div>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
